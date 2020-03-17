@@ -34,6 +34,25 @@ Then follow <a href="https://www.odoo.com/documentation/11.0/tutorials.html">the
 
 
 -------------------------
-#### 二次开发修改自odoo 11.0版本 [源码地址](https://github.com/odoo/odoo/tree/11.0)
+### 二次开发修改自odoo 11.0版本 [源码地址](https://github.com/odoo/odoo/tree/11.0)
 
+
+#### 运行项目
+```
+./odoo-bin -c /etc/odoo/odoo.conf -d testdb2 --dev=all
+```
+
+#### 配置文件
+```sh
+vim /etc/odoo/odoo.conf
+
+[options]
+addons_path = /home/willi/Desktop/odoo-11.0/odoo/addons, /home/willi/Desktop/odoo-11.0/addons, /home/willi/Desktop/odoo-11.0/my_modules
+```
+
+
+#### 使用脚手架创建模块模板
+```sh
+./odoo-bin scaffold bug-manage my_modules
+```
 

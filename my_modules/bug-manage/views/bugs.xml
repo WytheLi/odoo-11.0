@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+        <!--列表视图-->
+        <record model="ir.ui.view" id="bug-manage.list">
+            <field name="name">bug list</field>
+            <field name="model">bm.bug</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="is_closed"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        业务文档表单视图-->
+        <record model="ir.ui.view" id="bug-manage.form">
+            <field name="name">bug form</field>
+            <field name="model">bm.bug</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="do_close" type="object" string="关闭bug"/>
+                    </header>
+
+                    <sheet>
+                        <group name="group_top" col="2">
+                            <group name="group_left">
+                                <field name="name"/>
+                                <field name="user_id"/>
+                                <field name="is_closed"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="close_reason"/>
+                                <field name="follower_ids"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="详细内容">
+                                <field name="detail"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+<!--        搜索视图-->
+        <record model="ir.ui.view" id="bug-manage.search">
+            <field name="name">bug search</field>
+            <field name="model">bm.bug</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="is_closed"/>
+                    <field name="user_id"/>
+                </search>
+            </field>
+        </record>
+
+<!--        窗口动作-->
+        <record model="ir.actions.act_window" id="bug-manage.bug_action_window">
+            <field name="name">bug-manage window</field>
+            <field name="res_model">bm.bug</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="bug管理系统" id="bug-manage.menu_top"/>
+        <menuitem name="bug管  理" id="bug-manage.menu_left_bug_1" parent="bug-manage.menu_top"/>
+        <menuitem name="bug列表" id="bug-manage.menu_left_bug_2" parent="bug-manage.menu_left_bug_1" action="bug-manage.bug_action_window"/>
+    </data>
+</odoo>
