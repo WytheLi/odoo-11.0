@@ -24,3 +24,18 @@ class BugAdvanced(models.Model):
     #                            column2='tag_id',
     #                            string='标示')
     discovers = fields.Reference([('res.user', '用户'), ('res.partner', '合作伙伴')], 'bug发现者')
+
+    @api.onchange('user_id')
+    def user_follower_ref(self):
+        """
+        将负责人栏设置空，关注中栏将被清空
+        :return:
+        """
+        if not self.user_id:
+            self.follower_ids = None
+        return {
+            'warning': {
+                'title': '负责人栏设为空',
+                'message': '关注者栏被清空'
+            }
+        }
