@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="bug_wizard_plus" model="ir.ui.view">
+            <field name="name">bug管理-向导plus</field>
+            <field name="model">bug.wizard</field>
+<!--            继承视图-->
+            <field name="inherit_id" ref="bug_wizard"/>
+            <field name="arch" type="xml">
+<!--                替换元素-->
+                <xpath expr="//button[@name='update_batch']" position="replace">
+                    <button type="object" name="update_batch" string="批量更新" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+
+        <act_window id="action_bug_wizard_plus"
+                    name="bug向导管理plus"
+                    src_model="bm.bug"
+                    res_model="bug.wizard"
+                    view_mode="form"
+                    target="new"
+                    multi="True"/>
+    </data>
+</odoo>

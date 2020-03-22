@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record id="bug_wizard_plus" model="ir.ui.view">
+            <field name="name">bug管理-向导plus</field>
+            <field name="model">bug.wizard_plus</field>
+            <field name="arch" type="xml">
+                <form>
+<!--                    顶部按键栏-->
+                    <div class="oe_right">
+                        <button type="object" name="count_bugs" string="统计bug数"/>
+                        <button type="object" name="get_bugs" string="获取未关闭的bugs"/>
+                    </div>
+<!--                    bug对象列表栏目-->
+                    <field name="bug_ids">
+                        <tree>
+                            <field name="name"/>
+                            <field name="user_id"/>
+                            <field name="is_closed"/>
+                        </tree>
+                    </field>
+<!--                    向导选项栏-->
+                    <group col="2">
+                        <group>
+                            <field name="wizard_user_id"/>
+                        </group>
+                        <group>
+                            <field name="new_is_closed"/>
+                        </group>
+                    </group>
+<!--                    向导动作按钮栏-->
+                    <footer>
+                        <button type="object" name="update_batch" string="批量更新" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_bug_wizard_plus"
+                    name="bug向导管理plus"
+                    src_model="bm.bug"
+                    res_model="bug.wizard_plus"
+                    view_mode="form"
+                    target="new"
+                    multi="True"/>
+    </data>
+</odoo>

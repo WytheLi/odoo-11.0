@@ -2,3 +2,4 @@
 
 from . import models
 from . import bug_wizard
+from . import bug_wizard_plus
