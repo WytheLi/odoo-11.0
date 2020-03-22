@@ -56,3 +56,7 @@ addons_path = /home/willi/Desktop/odoo-11.0/odoo/addons, /home/willi/Desktop/odo
 ./odoo-bin scaffold bug-manage my_modules
 ```
 
+#### 启动shell(odoo9新增)
+```sh
+./odoo-bin shell -c /etc/odoo/odoo.conf -d testdb2
+```
