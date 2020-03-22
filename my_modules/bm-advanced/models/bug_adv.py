@@ -8,8 +8,8 @@ from odoo import models, fields, api
 
 
 class BugAdvanced(models.Model):
-    _name = 'bm.bug'
-    _inherit = ['bm.bug', 'mail.thread']
+
+    _inherit = 'bm.bug'
 
     need_time = fields.Integer('需要时间（h）')
     # 为bm.bug类的name字段增加help属性
