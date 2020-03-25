@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="bm-website.model_bug" model="ir.model">
+            <field name="name">new bug</field>
+            <field name="website_form_access">True</field>
+            <field name="website_form_label">New Bug</field>
+        </record>
+
+        <function model="ir.model.fields" name="formbuilder_whitelist">
+            <value>bm.bug</value>
+            <value eval="['name', 'user_id']"/>
+        </function>
+
+<!--        <record id="menu_bug" model="website.menu">-->
+<!--            <field name="name">Bug</field>-->
+<!--            <field name="url">/bugs</field>-->
+<!--            <field name="parent_id" ref="website.main_menu"/>-->
+<!--            <field name="sequence" type="int">50</field>-->
+<!--        </record>-->
+    </data>
+</odoo>
