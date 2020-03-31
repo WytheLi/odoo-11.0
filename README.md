@@ -47,7 +47,7 @@ Then follow <a href="https://www.odoo.com/documentation/11.0/tutorials.html">the
 vim /etc/odoo/odoo.conf
 
 [options]
-addons_path = /home/willi/Desktop/odoo-11.0/odoo/addons, /home/willi/Desktop/odoo-11.0/addons, /home/willi/Desktop/odoo-11.0/my_modules
+addons_path = /home/willi/Desktop/odoo-11.0/odoo/addons, /home/willi/Desktop/odoo-11.0/addons, /home/willi/Desktop/odoo-11.0/my_modules, /home/willi/Desktop/odoo-11.0/my_modules/lexuebao
 ```
 
 
